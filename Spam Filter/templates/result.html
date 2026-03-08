@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spam Detection Result</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#f0f2f5;
+    text-align:center;
+    padding-top:120px;
+}
+
+.card{
+    background:white;
+    width:400px;
+    margin:auto;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0px 0px 10px gray;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+.spam{
+    color:red;
+    font-size:26px;
+    font-weight:bold;
+}
+
+.ham{
+    color:green;
+    font-size:26px;
+    font-weight:bold;
+}
+
+button{
+    margin-top:25px;
+    padding:10px 20px;
+    border:none;
+    background:#007BFF;
+    color:white;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Message Analysis Result</h1>
+
+{% if prediction == "Spam" %}
+<p class="spam">⚠ This message is SPAM</p>
+{% else %}
+<p class="ham">✅ This message is HAM (Not Spam)</p>
+{% endif %}
+
+<a href="/">
+<button>Check Another Message</button>
+</a>
+
+</div>
+
+</body>
+</html>
